@@ -1,28 +1,12 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react';
+import './assets/index.css';
+import Plant from './containers/Plant';
 
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleWater = this.handleWater.bind(this);
-        this.state = {
-            watered: true,
-            confirm: 'yes',
-        };
-    }
-
-    handleWater() {
-        this.setState({ watered: !this.state.watered });
-    }
-
+class App extends Component {
     render() {
         return (
-            <div>
-                <p>{Date()}</p>
-                <p> Have you watered your plant today?</p>
-                <button onClick={this.handleWater} className="round-button">
-                    {this.state.watered ? 'yes' : 'no'}
-                </button>
+            <div className="App">
+                <Plant />
             </div>
         );
     }
